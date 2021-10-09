@@ -122,3 +122,15 @@ def blog_delete(request , id):
 def  register_view(request):
     return render(request , 'register.html')
 
+def search_venues(request):
+
+    if request.method == "POST":
+        searched = request.POST['searched']
+        blogs = BlogModel.objects.filter(title__contains=searched)
+        return render(request, 'search_venues.html',
+        {'searched':searched,
+         'blogs': blogs,
+        }) 
+    else:
+        return render(request, 'search_venues.html') 
+         

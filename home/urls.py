@@ -11,4 +11,5 @@ urlpatterns = [
    path("blog-delete/<id>" , blog_delete , name="blog_delete"),
    path("blog-update/<slug>/" , blog_update , name="blog_update"),
    path("logout-view/" , logout_view , name="logout_view"),
+   path("search_venues/" , search_venues , name="search_venues"),
 ]
